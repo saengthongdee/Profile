@@ -1,0 +1,35 @@
+nav {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 999;
+  padding: 1.2rem 2rem;
+
+  .logo {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+
+    li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: .25s ease-in-out;
+    }
+    a:hover {
+        color: rgb(243, 171, 84) ;
+    }
+  }
+}

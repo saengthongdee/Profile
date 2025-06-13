@@ -1,0 +1,85 @@
+section {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .box-hero {
+    width: 100%;
+    height: 100vh;
+    transform: scale(0.7);
+    border: 30px solid black;
+    border-radius: 50%;
+    
+    background-image: url(/public/bghero.webp);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    overflow: hidden;
+
+    .text-hero {
+      width: 60%;
+      height: 100%;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      flex-direction: column;
+      padding: 2rem 8rem;
+      gap: 1rem;
+
+      h1 {
+        font-size: 48px;
+        color: white;
+
+        span{
+            color: rgb(243, 171, 84) ;
+        }
+      }
+      h2 {
+        font-size: 36px;
+        color: #f9f9f9;
+
+        span {
+            color:rgb(243, 171, 84);
+        }
+        
+      }
+      p {
+        width: 80%;
+        font-size: 16.5px;
+        color: #f0f0f0;
+        border-top: 1px solid #fff;
+        padding-top: 1rem;
+      }
+
+      .contact-icon {
+        display: flex;
+        gap: 2rem;
+        padding: 1rem 0;
+
+        .icon {
+          font-size: 25px;
+          transition: 0.25s ease-in-out;
+        }
+        .icon:hover {
+          transform: translateY(-10px);
+          cursor: pointer;
+          color: rgb(243, 171, 84);
+        }
+      }
+    }
+    .image-hero {
+      width: 40%;
+      height: 100%;
+      position: relative;
+
+      img {
+        position: absolute;
+        bottom: -60rem;
+        left:-20rem;
+        scale: 1.8;
+        filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
+      }
+    }
+  }
+}
