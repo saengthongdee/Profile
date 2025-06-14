@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
 import { gsap } from "gsap";
-import { FaFacebookSquare, FaInstagramSquare, FaTiktok } from "react-icons/fa";
+import {  FaTiktok } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function hero() {
   const skill = ["Frontend Developer", "UX/UI Designer", "Website Animation"];
@@ -75,10 +78,25 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, [])
 
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(imageRef.current, {
+      y: -100, 
+      ease: "none",
+      scrollTrigger: {
+        trigger: imageRef.current,
+        start: "top top", 
+        end: "bottom",  
+        scrub: true, 
+      }
+    });
+  }, []);
+
   return (
     <div>
       <section>
-        <div className="box-hero">
+        <div className="box-hero" ref={imageRef}>
           <div className="text-hero">
             <h1 className="text-name">
               Hello, my name <span className="name">Rang</span>

@@ -23,6 +23,7 @@ function aboutpage() {
 
     return () => ctx.revert();
   }, []);
+  
 
   useEffect(() =>{
     gsap.fromTo(
