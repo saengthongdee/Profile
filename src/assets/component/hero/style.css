@@ -2,19 +2,25 @@ section {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background-color: #fefefe;
 
   .box-hero {
     width: 100%;
     height: 100vh;
     transform: scale(0.7);
     border: 30px solid black;
-    border-radius: 50%;
-    
-    background-image: url(/public/bghero.webp);
+    /* border-radius: 50%; */
+
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0)
+      ),
+      url("/public/bghero.webp");
+
     background-position: center;
     background-size: cover;
     display: flex;
-    overflow: hidden;
 
     .text-hero {
       width: 60%;
@@ -31,8 +37,8 @@ section {
         font-size: 48px;
         color: white;
 
-        span{
-            color: rgb(243, 171, 84) ;
+        span {
+          color: rgb(243, 171, 84);
         }
       }
       h2 {
@@ -40,9 +46,8 @@ section {
         color: #f9f9f9;
 
         span {
-            color:rgb(243, 171, 84);
+          color: rgb(243, 171, 84);
         }
-        
       }
       p {
         width: 80%;
@@ -76,7 +81,7 @@ section {
       img {
         position: absolute;
         bottom: -60rem;
-        left:-20rem;
+        left: -20rem;
         scale: 1.8;
         filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
       }

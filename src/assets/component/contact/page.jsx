@@ -4,7 +4,7 @@ import './style.css';
 function page() {
   return (
     <div>
-        
+
     </div>
   )
 }

@@ -1,0 +1,106 @@
+.performance {
+  width: 100%;
+  height: 100vh;
+  background-color: #0f0f1c;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .text {
+    color: #fefefe;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+
+    h1 {
+      border-left: 0px solid transparent;
+      padding: 0 1rem;
+    }
+  }
+  .box-performance {
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    .box {
+      margin-top: 10rem;
+      width: 300px;
+      height: 350px;
+      background-color: #343434;
+      border-radius: 10px;
+      transition: 0.25s ease-in-out;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 0.5rem;
+      border: 1px solid #909090;
+
+      gap: 0.75rem;
+
+      .image {
+        width: 100%;
+        height: 50%;
+        border-radius: 10px;
+         border: 1px solid #909090;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+        }
+      }
+      .performance-name {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      .performance-description {
+        width: 100%;
+        font-size: 14px;
+        color: #d8d8d8;
+        padding: 0 0.5rem;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .performance-framework {
+        text-align: start;
+        font-size: 14px;
+        color: rgb(243, 171, 84);
+        padding: 0 0.5rem;
+
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .performance-link {
+        border-top: 2px solid #fff;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: end;
+        align-items: start;
+        color: #333;
+        padding: 1rem;
+
+        .icon {
+          color: #d8d8d8;
+          font-size: 23px;
+          transition: 0.25s ease-in-out;
+        }
+        .icon:hover {
+          color: rgb(243, 171, 84);
+        }
+      }
+    }
+    .box:hover {
+      cursor: pointer;
+      background-color: transparent;
+    }
+  }
+}
