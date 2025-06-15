@@ -222,10 +222,10 @@ function hero() {
             </p>
 
             <div className="contact-icon">
-              <FaFacebook className="icon" />
-              <FaInstagram className="icon" />
-              <FaTiktok className="icon" />
-              <FaGithub className="icon" />
+              <a href="https://www.facebook.com/rutdanai.saengthongdee/"><FaFacebook className="icon" /></a>
+              <a href="https://www.instagram.com/__raaaaa.g?igsh=MTBvcmRsanY2eG5rZg%3D%3D&utm_source=qr"><FaInstagram className="icon" /></a>
+              <a href="https://www.tiktok.com/@bluffers520?_t=ZS-8xE7CfZYGgL&_r=1"><FaTiktok className="icon" /></a>
+              <a href="https://github.com/saengthongdee"><FaGithub className="icon" /></a>
             </div>
           </div>
           <div className="image-hero">

@@ -64,11 +64,12 @@ section {
         .icon {
           font-size: 25px;
           transition: 0.25s ease-in-out;
+          color: rgb(243, 171, 84);
         }
         .icon:hover {
           transform: translateY(-10px);
           cursor: pointer;
-          color: rgb(243, 171, 84);
+          color: #fff;
         }
       }
     }
