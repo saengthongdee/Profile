@@ -33,3 +33,14 @@ nav {
     }
   }
 }
+@media (max-width: 480px) {
+  nav {
+    height: auto;
+
+    ul {
+      flex-direction: column;
+      display: none;
+    }
+  }
+  
+}

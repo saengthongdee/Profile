@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
 import { gsap } from "gsap";
-import {  FaTiktok } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -16,87 +16,196 @@ function hero() {
   const imgRef = useRef();
 
   useEffect(() => {
-    const tl = gsap.timeline();
+    const ctx = gsap.context(() => {
+      if (window.matchMedia("(min-width: 1000px)").matches) {
+        const tl = gsap.timeline();
 
-    tl.to(
-      imgRef.current,
-      { y: -750, duration: 2, scaleX: 1,  scale: 1, ease: "power4.inOut" },
-    );
+        tl.to(imgRef.current, {
+          y: -750,
+          duration: 2,
+          scaleX: 1,
+          scale: 1,
+          ease: "power4.inOut",
+        });
 
-    tl.to(
-      ".box-hero",
-      {
-        scale: 1,
-        duration: 1,
-        opacity: 1,
-        border: 0,
-        borderRadius: 0,
-        ease: "power2.inOut",
-      },
-      ">0.5"
-    );
+        tl.to(
+          ".box-hero",
+          {
+            scale: 1,
+            duration: 1,
+            opacity: 1,
+            border: 0,
+            borderRadius: 0,
+            ease: "power2.inOut",
+          },
+          ">0.5"
+        );
 
-    tl.to(
-      imgRef.current,
-      { y: -1000, x: 300, duration: 1.2, scale: 1.1, ease: "power4.inOut" },
-      "<-0.2"
-    );
-    tl.fromTo(
-      ".text-name",
-      { x: -100, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1, ease: "circ.inOut" }
-    );
-    tl.fromTo(
-      ".text-skill",
-      { x: -100, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1, ease: "circ.inOut" },
-      "<0.2"
-    );
-    tl.fromTo(
-      ".text-lorem",
-      { opacity: 0, y: 50},
-      { opacity: 1, y: 0, duration: 1, ease: "circ.inOut" },
-    );
-    tl.fromTo(
-      ".icon",
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1,duration: 1, stagger: 0.2, ease: "power2.inOut" },
-      "<0.5"
-    );
-    tl.fromTo(
-      ".name",
-      { opacity: 0, x: -200 },
-      { opacity: 1, x: 0, duration: 1, ease: "sine.inOut" }
-    );
-  }, []);
+        tl.to(
+          imgRef.current,
+          {
+            y: -1000,
+            x: 300,
+            duration: 1.2,
+            scale: 1.1,
+            ease: "power4.inOut",
+          },
+          "<-0.2"
+        );
+        tl.fromTo(
+          ".text-name",
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1, ease: "circ.inOut" }
+        );
+        tl.fromTo(
+          ".text-skill",
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1, ease: "circ.inOut" },
+          "<0.2"
+        );
+        tl.fromTo(
+          ".text-lorem",
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 1, ease: "circ.inOut" }
+        );
+        tl.fromTo(
+          ".icon",
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.inOut",
+          },
+          "<0.5"
+        );
+        tl.fromTo(
+          ".name",
+          { opacity: 0, x: -200 },
+          { opacity: 1, x: 0, duration: 1, ease: "sine.inOut" }
+        );
+        tl.to(imgRef.current, {
+          y: -1500,
+          x: -1200,
+          
+          duration: 6,
+          scale: 0,
+          rotate: -1200,
+          ease: "power4.inOut",
+        });
+      }
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setIndex(prevIndex => (prevIndex + 1) % skill.length);
-  }, 3000);
+      // -----mobile ---
 
-  return () => clearInterval(interval);
-}, [])
+      if (window.matchMedia("(max-width: 480px)").matches) {
+        const tl = gsap.timeline();
 
-  const imageRef = useRef(null);
+        tl.fromTo(imgRef.current, {
+          y: 50,
+          opacity: 0
+        },{
+           y: 0,
+           opacity: 1,
+           duration: 1,
+           ease: "power2.inOut"
+        });
 
-  useEffect(() => {
-    gsap.to(imageRef.current, {
-      y: -100, 
-      ease: "none",
-      scrollTrigger: {
-        trigger: imageRef.current,
-        start: "top top", 
-        end: "bottom",  
-        scrub: true, 
+        tl.fromTo(
+          ".text-name",
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1, ease: "circ.inOut" }
+        );
+        tl.fromTo(
+          ".text-skill",
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1, ease: "circ.inOut" },
+          "<0.2"
+        );
+        tl.fromTo(
+          ".text-lorem",
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 1, ease: "circ.inOut" }
+        );
+        tl.fromTo(
+          ".icon",
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.inOut",
+          },
+          "<0.5"
+        );
+      }
+
+      // ipad
+      if (window.matchMedia("(min-width: 480px) and (max-width: 1024px)").matches) {
+        const tl = gsap.timeline();
+
+        tl.fromTo(imgRef.current, {
+          y: 50,
+          x: 200,
+          opacity: 0
+        },{
+           y: 0,
+           x:0,
+           rotate: 0,
+           opacity: 1,
+           duration: 1,
+           ease: "power2.inOut"
+        });
+
+        tl.fromTo(
+          ".text-name",
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1, ease: "circ.inOut" }
+        );
+        tl.fromTo(
+          ".text-skill",
+          { x: -100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1, ease: "circ.inOut" },
+          "<0.2"
+        );
+        tl.fromTo(
+          ".icon",
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.inOut",
+          },
+          "<0.5"
+        );
+        tl.to(imgRef.current, {
+          y: -1000,
+          x: -1000,
+          duration: 5,
+          scale: 0.1,
+          rotate: 1000,
+        },);
       }
     });
+
+    return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % skill.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div>
-      <section>
-        <div className="box-hero" ref={imageRef}>
+      <section id="hero">
+        <div className="box-hero">
           <div className="text-hero">
             <h1 className="text-name">
               Hello, my name <span className="name">Rang</span>
@@ -116,7 +225,7 @@ useEffect(() => {
               <FaFacebook className="icon" />
               <FaInstagram className="icon" />
               <FaTiktok className="icon" />
-              <FaGithub className="icon"/>
+              <FaGithub className="icon" />
             </div>
           </div>
           <div className="image-hero">

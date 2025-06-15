@@ -6,7 +6,7 @@ import Nav from "./assets/component/nav/page";
 import Hero from "./assets/component/hero/page";
 import About from "./assets/component/about/page";
 import Performance from "./assets/component/performance/page";
-
+import Skill from "./assets/component/contact/page";
 
 function App() {
 
@@ -31,6 +31,7 @@ function App() {
       <Hero/>
       <About/>
       <Performance/>
+      <Skill/>
     </>
   )
 }

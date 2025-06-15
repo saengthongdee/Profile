@@ -12,37 +12,58 @@ function aboutpage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: aboutRef.current,
-        start: "top top",
-        end: "bottom 90%",
-        pin: textRef.current,
-        pinSpacing: false,
-      });
+      if (window.matchMedia("(min-width: 480px)").matches) {
+        ScrollTrigger.create({
+          trigger: aboutRef.current,
+          start: "top top",
+          end: "bottom 80%",
+          pin: textRef.current,
+          pinSpacing: false,
+        });
+        gsap.fromTo(
+          textaboutRef.current,
+          { opacity: 0, x: -30 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: textaboutRef.current,
+              start: "top 80%",
+              end: "bottom",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+      if (window.matchMedia("(max-width: 480px)").matches) {
+
+        const aboutTexts = gsap.utils.toArray(".about-text");
+
+        aboutTexts.forEach((el, i) => {
+          gsap.from(el, {
+            opacity: 0,
+            duration: 1,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 80%",
+              end: "bottom",
+              toggleActions: "play reverse play reverse",
+            },
+            delay: i * 0.2,
+          });
+        });
+      }
     });
 
     return () => ctx.revert();
   }, []);
-  
-
-  useEffect(() =>{
-    gsap.fromTo(
-        textaboutRef.current,
-        {opacity: 0, x:-30},
-        {opacity: 1, x: 0, duration: 1, ease:"power2.inOut",
-            scrollTrigger: {
-                trigger: textaboutRef.current,
-                start: "top 80%",
-                end: "bottom",
-                toggleActions: "play none none none"
-            }
-        }
-    )
-  },[]);
 
   return (
     <div>
-      <div className="about" ref={aboutRef}>
+      <div className="about" ref={aboutRef} id="about">
         <div className="box-content-about">
           <div className="box-text" ref={textRef}>
             <h4>
@@ -53,17 +74,15 @@ function aboutpage() {
           </div>
           <div className="space"></div>
 
-          <div className="text">
+          <div className="about-text">
             <h2>Personal Profile</h2>
-            <p>
-              Hello, I'm Rujdanai Saengthongdee nickname Rang 23 years old.
-            </p>
+            <p>Hello, I'm Rujdanai Saengthongdee nickname Rang 23 years old.</p>
           </div>
         </div>
         <div className="box-content-about">
           <div className="space"></div>
 
-          <div className="text">
+          <div className="about-text">
             <h2>Educational</h2>
             <p>
               Currently studying at Silpakorn University Faculty of Science
@@ -74,7 +93,7 @@ function aboutpage() {
         <div className="box-content-about">
           <div className="space"></div>
 
-          <div className="text">
+          <div className="about-text">
             <h2>Favorite Activities</h2>
             <p>Programming</p>
             <p>Drawing</p>
