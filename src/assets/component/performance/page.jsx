@@ -154,7 +154,7 @@ function performancepage() {
             <div className="box" key={index}>
               <div className="image">
                 <a href={`${item.link}`}>
-                  <img src={item.image} alt={item.description} />
+                  <img src={item.image} alt={item.description} loading="lazy" />
                 </a>
               </div>
               <div className="performance-name">

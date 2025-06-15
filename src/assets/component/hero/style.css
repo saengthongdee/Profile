@@ -145,6 +145,7 @@ section {
       transform: scale(1);
       flex-direction: column;
       position: relative;
+      
       background-image: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.7),

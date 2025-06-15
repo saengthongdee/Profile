@@ -229,7 +229,7 @@ function hero() {
             </div>
           </div>
           <div className="image-hero">
-            <img ref={imgRef} src="/profile.webp" alt="" />
+            <img ref={imgRef} src="/profile.webp" alt="" loading="lazy" />
           </div>
         </div>
       </section>
